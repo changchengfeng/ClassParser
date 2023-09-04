@@ -1,0 +1,31 @@
+package clz.attributes
+
+enum class AttributeType(val value: String) {
+    AnnotationDefault("AnnotationDefault"),
+    BootstrapMethods("BootstrapMethods"),
+    CharacterRangeTable("CharacterRangeTable"),
+    Code("Code"),
+    ConstantValue("ConstantValue"),
+    CompilationID("CompilationID"),
+    Deprecated("Deprecated"),
+    EnclosingMethod("EnclosingMethod"),
+    Exceptions("Exceptions"),
+    InnerClasses("InnerClasses"),
+    LineNumberTable("LineNumberTable"),
+    LocalVariableTable("LocalVariableTable"),
+    LocalVariableTypeTable("LocalVariableTypeTable"),
+    MethodParameters("MethodParameters"),
+    RuntimeVisibleAnnotations("RuntimeVisibleAnnotations"),
+    RuntimeInvisibleAnnotations("RuntimeInvisibleAnnotations"),
+    RuntimeVisibleParameterAnnotations("RuntimeVisibleParameterAnnotations"),
+    RuntimeInvisibleParameterAnnotations("RuntimeInvisibleParameterAnnotations"),
+    RuntimeVisibleTypeAnnotations("RuntimeVisibleTypeAnnotations"),
+    RuntimeInvisibleTypeAnnotations("RuntimeInvisibleTypeAnnotations"),
+    Signature("Signature"),
+    SourceDebugExtension("SourceDebugExtension"),
+    SourceFile("SourceFile"),
+    SourceID("SourceID"),
+    StackMap("StackMap"),
+    StackMapTable("StackMapTable"),
+    Synthetic("Synthetic")
+}
