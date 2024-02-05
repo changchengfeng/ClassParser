@@ -114,27 +114,27 @@ class CodeAttribute(val max_stack: u2, val max_locals: u2,constant_pools: Array<
                         Opcodes.Type.TABLES_WITCH -> {
                             val pad = (it % 4).let { if (it == 0) 0 else 4 - it }
                             it += pad
-                            val defaultValue = codes.readInt(it)
+                            val offset_default = codes.readInt(it)  // offset_default 是当前指令的偏移量
                             it += 4
                             val lowValue = codes.readInt(it)
                             it += 4
                             val highValue = codes.readInt(it)
                             it += 4
-                            stringBuffer.append(" pad $pad defaultValue $defaultValue lowValue $lowValue highValue $highValue \n\n")
+                            stringBuffer.append(" pad $pad offset_default $offset_default lowValue $lowValue highValue $highValue \n\n")
                             for (vi in lowValue..highValue) {
                                 val offfsets = codes.readInt(it)
-                                stringBuffer.append("                jump[$vi] = ${offfsets} jumpto = ${current + offfsets} \n")
+                                stringBuffer.append("                jump[$vi] = offfsets ${offfsets} jumpto = ${current + offfsets} \n")
                                 it += 4
                             }
                         }
                         Opcodes.Type.LOOKUP_SWITCH -> {
                             val pad = (it % 4).let { if (it == 0) 0 else 4 - it }
                             it += pad
-                            val defaultValue = codes.readInt(it)
+                            val offset_default = codes.readInt(it)  // offset_default 是当前指令的偏移量
                             it += 4
                             val npairs = codes.readInt(it)
                             it += 4
-                            stringBuffer.append(" pad $pad defaultValue $defaultValue  npairs $npairs \n\n")
+                            stringBuffer.append(" pad $pad offset_default $offset_default  npairs $npairs \n\n")
                             for (vi in 0 until npairs) {
                                 stringBuffer.append("                jump[$vi] = val ${codes.readInt(it)}")
                                 it += 4

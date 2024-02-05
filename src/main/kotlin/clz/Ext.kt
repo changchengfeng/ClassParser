@@ -7,9 +7,6 @@ import okio.ByteString
 import okio.ByteString.Companion.readByteString
 import okio.ByteString.Companion.toByteString
 import java.io.ByteArrayInputStream
-import java.lang.reflect.GenericArrayType
-import java.lang.reflect.ParameterizedType
-import java.lang.reflect.Type
 import java.nio.ByteOrder
 
 typealias u2 = Short
